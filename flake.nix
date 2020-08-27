@@ -7,8 +7,9 @@
       stdenv.mkDerivation {
         name = "aurora-wine";
         # version = "1.11"
-        src = nixpkgs.lib.fetchurl {
-          url = "http://www.pentarch.org/steve/Aurora151Full.rar";
+        src = pkgs.fetchurl {
+          url     = "http://pentarch.org/steve/Aurora151Full.rar";
+          sha256  = "0000000000000000000000000000000000000000000000000000";
         };
       };
   };
