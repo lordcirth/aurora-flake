@@ -22,7 +22,7 @@
 
         launcher = ./aurora-launcher.sh;
 
-        buildInputs = [ unrar ];
+        buildInputs = [ unrar wine ];
 
         dontBuild = true;
 
@@ -35,8 +35,12 @@
         '';
 
         installPhase = ''
-          mkdir -p $out/aurora
+          mkdir -p $out/aurora $out/bin
           cp -r * $out/aurora/
+          echo "WINE=${wine}/bin/wine"  >>  $out/bin/aurora-launcher.sh
+          echo "STORE=$out"             >>  $out/bin/aurora-launcher.sh
+          cat ${launcher}               >>  $out/bin/aurora-launcher.sh
+          chmod +x                          $out/bin/aurora-launcher.sh
         '';
       };
   };
