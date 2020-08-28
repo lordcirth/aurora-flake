@@ -2,5 +2,5 @@ COPYDIR="$HOME/wine-aurora"
 DB="$COPYDIR/AuroraDB.db"
 if [[ ! -a "$COPYDIR" ]]; then
   cp -r "$STORE"/aurora "$COPYDIR"
-  chmod o+w "$DB"
+  chmod -R u+w "$COPYDIR"
 fi

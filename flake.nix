@@ -42,7 +42,7 @@
           echo "STORE=$out"             >>  $out/bin/aurora-copy
 
           cat ${launcher}               >>  $out/aurora/aurora-launcher
-          cat ${copier}                 >>  $out/aurora/aurora-copy
+          cat ${copier}                 >>  $out/bin/aurora-copy
 
           chmod +x                          $out/aurora/aurora-launcher
         '';
