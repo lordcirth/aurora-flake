@@ -20,7 +20,8 @@
           sha256    = "61777018f5e39a536285e4cb86cc730d8df323539b1bf4c4e68736b786423bde";
         };
 
-        launcher = ./aurora-launcher.sh;
+        launcher = ./aurora-launcher;
+        copier = ./aurora-copy;
 
         buildInputs = [ unrar wine ];
 
@@ -37,10 +38,13 @@
         installPhase = ''
           mkdir -p $out/aurora $out/bin
           cp -r * $out/aurora/
-          echo "WINE=${wine}/bin/wine"  >>  $out/bin/aurora-launcher.sh
-          echo "STORE=$out"             >>  $out/bin/aurora-launcher.sh
-          cat ${launcher}               >>  $out/bin/aurora-launcher.sh
-          chmod +x                          $out/bin/aurora-launcher.sh
+          echo "WINE=${wine}/bin/wine"  >>  $out/aurora/aurora-launcher
+          echo "STORE=$out"             >>  $out/bin/aurora-copy
+
+          cat ${launcher}               >>  $out/aurora/aurora-launcher
+          cat ${copier}                 >>  $out/aurora/aurora-copy
+
+          chmod +x                          $out/aurora/aurora-launcher
         '';
       };
   };

@@ -1,0 +1,10 @@
+WINEPREFIX=$HOME/.wine-aurora
+WINEARCH=win32
+EXE="./Aurora.exe"
+COPYDIR="$HOME/wine-aurora"
+
+# Aurora saves in PWD, so we cd to SAVEDIR
+cd $COPYDIR
+
+# Wine path added in flake.nix
+$WINE $EXE
