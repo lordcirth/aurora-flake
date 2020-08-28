@@ -35,12 +35,12 @@
         '';
 
         installPhase = ''
-          mkdir -p $out/aurora $out/bin
-          cp -r * $out/aurora/
-          echo "WINE=${wine}/bin/wine"  >>  $out/bin/aurora-launcher.sh
-          echo "STORE=$out"             >>  $out/bin/aurora-launcher.sh
-          cat ${launcher}               >>  $out/bin/aurora-launcher.sh
-          chmod +x                          $out/bin/aurora-launcher.sh
+          mkdir -p $out/
+          cp -r * $out/
+          echo "WINE=${wine}/bin/wine"  >>  $out/aurora-launcher.sh
+#          echo "STORE=$out"             >>  $out/aurora-launcher.sh
+          cat ${launcher}               >>  $out/aurora-launcher.sh
+          chmod +x                          $out/aurora-launcher.sh
         '';
       };
   };

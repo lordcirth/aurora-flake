@@ -1,6 +1,6 @@
-#STORE="$(dirname $0)/../"
-EXE="$STORE/aurora/Aurora.exe"
-DB="$STORE/aurora/AuroraDB.db"
+#EXE="$STORE/aurora/Aurora.exe"
+EXE="./Aurora.exe"
+#DB="$STORE/aurora/AuroraDB.db"
 
 WINEPREFIX=$HOME/.wine-aurora
 WINEARCH=win32
