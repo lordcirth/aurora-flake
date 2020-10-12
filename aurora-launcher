@@ -1,5 +1,5 @@
-WINEPREFIX=$HOME/.wine-aurora
-WINEARCH=win32
+export WINEPREFIX=$HOME/.wine-aurora
+export WINEARCH=win32
 EXE="./Aurora.exe"
 COPYDIR="$HOME/wine-aurora"
 
