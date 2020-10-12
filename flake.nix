@@ -7,11 +7,11 @@
       with import nixpkgs { config.allowUnfree = true; system = "x86_64-linux"; };
       stdenv.mkDerivation rec {
         name = "aurora-wine";
-        version = "1.11";
+        version = "1.12";
         baseSrc = pkgs.fetchurl {
           curlOpts  = [ "--user-agent" "Wget" ];
           url       = "http://pentarch.org/steve/Aurora151Full.rar";
-          sha256    = "aab11f817be1131cc32efebd2a02faf0bf0600a2af7ef971ff32f290a581ef3d";
+          sha256    = "0000000000000000000000000000000000000000000000000000";
         };
 
         patchSrc = pkgs.fetchurl {
